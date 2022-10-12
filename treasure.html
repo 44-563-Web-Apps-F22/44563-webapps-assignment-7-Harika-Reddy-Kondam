@@ -30,7 +30,11 @@
 <div class="container border p-2 mb-2 bg-info text-white" id="help">
     <p class="font-weight-bold">Help report.</p>
 </div>
-
+<br>
+    <div class="container">
+    <button type="button"   class="btn btn-primary"   onclick="newGame()">New Game</button>
+    </div>
+<br>
 
 <div class="container">
 
@@ -129,6 +133,21 @@ function help(){
         document.getElementById("help").innerHTML = "Sorry, no help available"
     }
 
+}
+
+function newGame(){
+        treasureLocation = Math.floor(Math.random() * 25)
+       if(treasureLocation == 12)
+        {
+        treasureLocation = Math.floor(Math.random() * 25)
+         }
+       
+        document.getElementById("chests").innerHTML = "Number of chests checked is 0"
+        document.getElementById("score").innerHTML = "Score is 0"
+        for (var i = 0; i <= 24; i++) {
+            if(i != 12)
+                document.getElementById(ids[i]).src = "./chest.jpeg"
+        }
 }
 </script>    
 
