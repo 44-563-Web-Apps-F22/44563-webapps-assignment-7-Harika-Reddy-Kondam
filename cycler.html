@@ -37,10 +37,11 @@
 
         <div class="form-group">            
             <input type="text" class="form-control" id="inputElement" >            
-          </div>
-
-          <br>
+        </div>
+        <br>
 		<button onclick="makeNewDiv()">Add value</button>
+        <button onclick="get()">Get</button>
+        <button onclick="spin()">Spin</button>
 	
 </body>
 <script>
@@ -57,5 +58,29 @@
 		container.appendChild(element)
 		
 	}
+    
+    function get(){ 
+        var cyclerItems= []
+        cyclerItems = document.getElementsByClassName("cycler")
+        length = cyclerItems.length
+
+        if(length>0){
+            cyclerItems[length-1].remove()
+        }
+
+    }
+
+    function spin(){
+        var cyclerItems= []
+        cyclerItems = document.getElementsByClassName("cycler")
+        length = cyclerItems.length
+
+        if(length>1){
+            var removedItem = cyclerItems[length-1]
+            document.getElementById('target').insertBefore(removedItem,cyclerItems[0])
+        }
+
+
+    }
 </script>
 </html>	
