@@ -40,10 +40,10 @@
         }
     
         function startTime(){
-        for(let i=0;i<4;i++){
+        for(let i=0;i<=startCount;i++){
             setTimeout(()=>{
             document.getElementById('countdown').innerHTML = "Count: " + i
-        }, (3-i)*1000)
+        }, (startCount-i)*1000)
         }
         setTimeout(()=>{
         if(myTime==undefined){
@@ -53,9 +53,7 @@
             buttonTime = Date.now()
             document.getElementById('target').innerHTML="Time was "+(buttonTime-myTime)
         }
-        }, 3000)
-    
-        
+        }, startCount*1000)
         }
     </script>
 </body>
